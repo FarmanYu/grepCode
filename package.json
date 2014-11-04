@@ -1,0 +1,14 @@
+{
+  "name": "grep-Commender-online",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "projectPath": "E:\\grepCode",
+  "dependencies": {
+    "express": "3.5.1",
+    "jade": "*",
+    "promise": "^6.0.1"
+  }
+}
