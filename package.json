@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node app.js"
   },
-  "projectPath": "E:\\grepCode",
+  "projectPath": "/home/hfyu/project6.0/front",
   "dependencies": {
     "express": "3.5.1",
     "jade": "*",
