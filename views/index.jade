@@ -1,5 +1,30 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class='container')
+    blockquote
+      p="论查找项目中代码的重要性！"
+      footer="是否为查找文件夹中代码而烦恼，现在有了grep命令，轻松搞定！"
+    div(class='form-horizontal')
+      div(class='form-group')
+        label(class='col-sm-1 control-label')= "本地路径:"
+        div(class='col-sm-11')
+          input(type="text",class="form-control",id="project",placeholder="选择项目地址", value= projectPath)
+    blockquote
+      p="查询选项"
+    div(class='form-inline')
+      div(class='form-group')
+        div(class='input-group')
+          div(class='input-group-addon')= "变量名"
+          input(type="text",class="form-control",id="word",placeholder="like: userName")
+      div(class='form-group')
+        div(class='input-group')
+          div(class='input-group-addon')= "匹配文件"
+          input(type="text",class="form-control",id="files",placeholder="like: *.js")
+      div(class='form-group')
+        div(class='input-group')
+          div(class='input-group-addon')="显示行数"
+          input(type="text",class="form-control",id="number",placeholder="like: 10")
+      button(type="submit",class="btn btn-primary", id="start-query")="开始查找"
+    div(id='code-content')="code:"
+  script(type='text/javascript', src="/js/app.js")
