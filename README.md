@@ -13,3 +13,6 @@
 
 ###windows
 需要安装grepwin，方便在本地调用grep命令。
+
+###日志
+日志保存在/logs文件夹中

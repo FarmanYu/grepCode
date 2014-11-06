@@ -1,25 +1,35 @@
 $(document).ready(function() {
 	var isPending = false;
 	var currentWord = "";
-	var HighlightCode = function(str){
-		var re = new RegExp(currentWord, "g");
-		str = str.replace(re, '<kbd>'+ currentWord +'</kbd>');
-		return str;
+
+	var colorCode = function(container, codes){
+		container.empty();
+		//codes = codes.replace(/</g, "&lt;").replace(/>/g,"&gt;");
+
+		codes.forEach(function(codeContent){
+			var title = $("<h2></h2>");
+			title.append(codeContent.filename);
+			var newCode = $("<code class='"+ codeContent.suffix +"'></code>");
+			codeContent.codeText = codeContent.code.join("\n");
+			codeContent.codeText = codeContent.codeText.replace(/</g, "&lt;").replace(/>/g,"&gt;");
+
+			newCode.html( codeContent.codeText );
+			container.append( title );
+			container.append( newCode );
+		});
+
+		container.find("code").each(function(idx, block){
+			hljs.highlightBlock( block );
+		});
 	}
-	var colorCode = function(codes){
-		var code = "";
-		codes = codes.replace(/</g,"&lt;")
-				     .replace(/>/g,"&gt;");
-		var codelines = codes.split("\n");
-		
-		code = codelines.join("<br />");
-		code = HighlightCode(code);
-		return code;
-	}
+	//get grep result
 	$("#start-query").click(function(e) {
 		if (isPending) return;
 		isPending = true;
 
+		setTimeout(function(){
+			isPending = false;
+		}, 5000);
 		currentWord = $("#word").val();
 		var data = {
 			word: currentWord,
@@ -32,9 +42,8 @@ $(document).ready(function() {
 			data,
 			function(res) {
 				isPending = false;
-				console.log(res);
-				if(typeof(res.data) === "string"){
-					$("#code-content").html( colorCode(res.data) );
+				if(res.data.length){
+					colorCode($("#code-content"), res.data);
 				}
 			});
 	});

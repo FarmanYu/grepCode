@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var cmd = require('./routes/cmd');
 var http = require('http');
+var open = require('open');
 var path = require('path');
 
 var app = express();
@@ -33,4 +34,5 @@ app.get('/cmdparse', cmd.parse);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
+  open('http://localhost:'+ app.get('port'));
 });

@@ -4,10 +4,12 @@ var config = JSON.parse(fs.readFileSync("package.json"));
 var projectPath = config.projectPath;
 var Promise = require("promise");
 var path = require("path");
+var logger = require('../log').logger;
+
 
 var grepCommender = {
-	"findInFiles": "grep -r '#{WORD}' #{FILES}",
-	"findInFilesWithNum": "grep -r '#{WORD}' #{FILES} -C #{NUMBER}"
+	findInFiles: "grep -r -n '#{WORD}' #{FILES}",
+	findInFilesWithNum: "grep -r -n '#{WORD}' -C #{NUMBER} #{FILES}"
 };
 var commenderPaser = {
 	setPath: function(path) {
@@ -44,7 +46,7 @@ var commenderPaser = {
 		return this._concatCommend(commendText);
 	},
 	_concatCommend: function(commend) {
-		console.log(commend);
+		logger.info(commend);
 		return new Promise(function(resolve, reject) {
 			var cd = exec(commend, {
 				encoding: 'utf8',
@@ -55,15 +57,14 @@ var commenderPaser = {
 				env: null
 			});
 			cd.stdout.on("data", function(data) {
-				resolve(data)
+				logger.info( data );
+				resolve(data);
 			});
 			cd.stdout.on("error", function(err) {
 				reject(err);
 			});
 			cd.on('exit', function(code, signal) {
-				console.log("grep process exit...");
-				//console.log(code);
-				//console.log(signal);
+				logger.info("grep process exit...");
 			});
 		});
 	},
