@@ -1,16 +1,26 @@
 {
-  "name": "grep-Commender-online",
-  "version": "1.0.0",
-  "private": true,
+  "name": "grep-commander-online",
+  "version": "2.0.0",
+  "description": "基于 Web 的本地代码搜索工具",
+  "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "mocha tests/*.test.js --timeout 15000",
+    "test:watch": "mocha tests/*.test.js --watch"
   },
-  "projectPath": "/home/hfyu/project6.0/front",
+  "projectPath": "/Users/yuhongfei/work/grepCode",
   "dependencies": {
-    "express": "3.5.1",
-    "jade": "*",
-    "log4js": "^0.6.21",
-    "open": "0.0.5",
-    "promise": "^6.0.1"
+    "express": "^4.18.2",
+    "pug": "^3.0.2",
+    "log4js": "^6.9.1",
+    "open": "^0.0.5"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0",
+    "chai": "^4.3.7",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

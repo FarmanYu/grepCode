@@ -1,0 +1,19 @@
+doctype html
+html(lang="zh-CN")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title= title || '错误 - grep-Commander'
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    style.
+      body { padding-top: 50px; }
+      .error-container { max-width: 600px; margin: 0 auto; }
+      pre { max-height: 300px; overflow: auto; }
+  body
+    .container.error-container
+      .alert.alert-danger
+        h4= message
+        if error && error.stack && process.env.NODE_ENV === 'development'
+          pre= error.stack
+        hr
+        a(href="/") 返回首页

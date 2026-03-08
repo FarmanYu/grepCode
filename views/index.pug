@@ -1,0 +1,637 @@
+doctype html
+html(lang="zh-CN")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title grep-Commander | 本地代码搜索工具
+    meta(name="description" content="基于Web的本地代码搜索工具")
+    
+    // Fonts
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet")
+    
+    // Styles
+    style.
+      :root {
+        /* Color Palette - Dark Theme */
+        --bg-primary: #0a0a0f;
+        --bg-secondary: #12121a;
+        --bg-tertiary: #1a1a24;
+        --bg-card: #16161f;
+        --bg-hover: #1e1e2a;
+        
+        /* Accent Colors */
+        --accent-primary: #6366f1;
+        --accent-secondary: #8b5cf6;
+        --accent-success: #10b981;
+        --accent-warning: #f59e0b;
+        --accent-error: #ef4444;
+        --accent-info: #3b82f6;
+        
+        /* Text Colors */
+        --text-primary: #f1f5f9;
+        --text-secondary: #94a3b8;
+        --text-muted: #64748b;
+        
+        /* Borders */
+        --border-color: #2a2a3a;
+        --border-light: #1e1e2a;
+        
+        /* Effects */
+        --glow-primary: rgba(99, 102, 241, 0.4);
+        --glow-success: rgba(16, 185, 129, 0.3);
+        
+        /* Spacing */
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-xl: 24px;
+        
+        /* Transitions */
+        --transition-fast: 150ms;
+        --transition-normal: 250ms;
+        --transition-slow: 400ms;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      
+      /* Background Pattern */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+          radial-gradient(ellipse 80% 50% at 50% -20%, var(--glow-primary), transparent),
+          radial-gradient(ellipse 60% 40% at 100% 100%, rgba(139, 92, 246, 0.15), transparent);
+        pointer-events: none;
+        z-index: 0;
+      }
+      
+      /* Layout */
+      .app-container {
+        position: relative;
+        z-index: 1;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 40px 24px;
+      }
+      
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+      
+      .header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 50%, var(--accent-secondary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
+      }
+      
+      .header p {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+      }
+      
+      /* Bento Grid */
+      .bento-grid {
+        display: grid;
+        gap: 24px;
+      }
+      
+      /* Cards */
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        transition: all var(--transition-normal);
+      }
+      
+      .card:hover {
+        border-color: var(--accent-primary);
+        box-shadow: 0 0 40px rgba(99, 102, 241, 0.1);
+      }
+      
+      .card-title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 20px;
+      }
+      
+      .card-title i {
+        color: var(--accent-primary);
+        font-size: 1.25rem;
+      }
+      
+      /* Search Input */
+      .search-form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      
+      .form-label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+      }
+      
+      .form-input {
+        width: 100%;
+        padding: 14px 18px;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+        font-size: 0.95rem;
+        font-family: inherit;
+        transition: all var(--transition-fast);
+      }
+      
+      .form-input:focus {
+        outline: none;
+        border-color: var(--accent-primary);
+        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+      }
+      
+      .form-input::placeholder {
+        color: var(--text-muted);
+      }
+      
+      .form-row {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      
+      .form-row .form-group {
+        flex: 1;
+        min-width: 200px;
+      }
+      
+      /* Button */
+      .btn-search {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 40px;
+        background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+        border: none;
+        border-radius: var(--radius-md);
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-normal);
+        margin-top: 8px;
+      }
+      
+      .btn-search:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px var(--glow-primary);
+      }
+      
+      .btn-search:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      
+      /* Checkbox */
+      .form-checkbox {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+      .form-checkbox input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--accent-primary);
+        cursor: pointer;
+      }
+      .form-checkbox:hover {
+        color: var(--text-primary);
+      }
+      
+      /* Results Area */
+      .results-card {
+        min-height: 400px;
+      }
+      
+      .results-empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px;
+        color: var(--text-muted);
+      }
+      
+      .results-empty i {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        opacity: 0.5;
+      }
+      
+      .results-count {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        border-radius: var(--radius-md);
+        color: var(--accent-success);
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 24px;
+      }
+      
+      /* Code Result */
+      .code-result {
+        margin-bottom: 24px;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-color);
+      }
+      
+      .code-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 20px;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+        border-bottom: 1px solid var(--border-color);
+      }
+      
+      .code-filename {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.9rem;
+        color: var(--text-primary);
+      }
+      
+      .code-filename .ext {
+        color: var(--accent-secondary);
+        font-weight: 600;
+      }
+      
+      .code-actions {
+        display: flex;
+        gap: 12px;
+      }
+      
+      .code-fullpath {
+        padding: 8px 20px;
+        background: var(--bg-secondary);
+        color: var(--text-muted);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        border-bottom: 1px solid var(--border-color);
+      }
+      
+      .code-action {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        text-decoration: none;
+      }
+      
+      .code-action:hover {
+        background: var(--accent-primary);
+        border-color: var(--accent-primary);
+        color: white;
+      }
+      
+      .code-body {
+        padding: 20px;
+        overflow-x: auto;
+        background: #0d1117;
+        max-width: 100%;
+      }
+      
+      .code-body pre {
+        margin: 0;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.85rem;
+        line-height: 1.7;
+        color: #c9d1d9;
+        white-space: pre-wrap;        /* 自动换行 */
+        word-wrap: break-word;        /* 长单词换行 */
+        word-break: break-all;        /* 允许在单词内换行 */
+        white-space: normal;          /* 允许正常的自动换行 */
+      }
+      
+      .code-body code {
+        display: block;
+        white-space: pre-wrap;
+        word-break: break-all;
+      }
+      
+      /* Line Numbers */
+      .line-number {
+        display: inline-block;
+        width: 50px;
+        color: #484f58;
+        text-align: right;
+        padding-right: 20px;
+        margin-right: 15px;
+        border-right: 1px solid #21262d;
+        user-select: none;
+      }
+      
+      /* Loading */
+      .loading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 20px;
+        color: var(--text-secondary);
+      }
+      
+      .loading-spinner {
+        width: 48px;
+        height: 48px;
+        border: 3px solid var(--border-color);
+        border-top-color: var(--accent-primary);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      /* Modal */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+      }
+      
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .modal {
+        width: 90%;
+        max-width: 1200px;
+        max-height: 90vh;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        transform: scale(0.95);
+        transition: transform var(--transition-normal);
+      }
+      
+      .modal-overlay.active .modal {
+        transform: scale(1);
+      }
+      
+      .modal-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 28px;
+        background: var(--bg-tertiary);
+        border-bottom: 1px solid var(--border-color);
+      }
+      
+      .modal-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      
+      .modal-close {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        color: var(--text-secondary);
+        font-size: 1.5rem;
+        cursor: pointer;
+        border-radius: var(--radius-sm);
+        transition: all var(--transition-fast);
+      }
+      
+      .modal-close:hover {
+        background: var(--bg-hover);
+        color: var(--text-primary);
+      }
+      
+      .modal-body {
+        max-height: calc(90vh - 80px);
+        overflow: auto;
+        background: #0d1117;
+      }
+      
+      .modal-body pre {
+        margin: 0;
+        padding: 24px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.85rem;
+        line-height: 1.7;
+        color: #c9d1d9;
+      }
+      
+      /* Footer */
+      .footer {
+        text-align: center;
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-muted);
+        font-size: 0.875rem;
+      }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .app-container {
+          padding: 24px 16px;
+        }
+        
+        .header h1 {
+          font-size: 1.75rem;
+        }
+        
+        .form-row {
+          flex-direction: column;
+        }
+        
+        .form-row .form-group {
+          min-width: 100%;
+        }
+        
+        .code-header {
+          flex-direction: column;
+          gap: 12px;
+          align-items: flex-start;
+        }
+        
+        .code-actions {
+          width: 100%;
+          justify-content: flex-end;
+        }
+      }
+      
+      /* Highlight.js Theme Override */
+      .hljs {
+        background: transparent !important;
+        padding: 0 !important;
+      }
+      .hljs-keyword { color: #ff7b72; }
+      .hljs-string { color: #a5d6ff; }
+      .hljs-number { color: #79c0ff; }
+      .hljs-function { color: #d2a8ff; }
+      .hljs-comment { color: #8b949e; }
+      .hljs-class { color: #ffa657; }
+      .hljs-variable { color: #ffa657; }
+      .hljs-built_in { color: #ffa657; }
+      .hljs-type { color: #7ee787; }
+      
+      /* Search Keyword Highlight */
+      .search-highlight {
+        background: #f59e0b !important;
+        color: #000 !important;
+        padding: 2px 4px;
+        border-radius: 3px;
+        font-weight: 600;
+      }
+      .search-highlight:hover {
+        background: #fbbf24 !important;
+      }
+
+  body
+    .app-container
+      // Header
+      .header
+        h1 🔍 grep-Commander
+        p 基于 Web 的本地代码搜索工具
+      
+      // Bento Grid Layout
+      .bento-grid
+        // Search Card
+        .card.search-card
+          .card-title
+            i.fas.fa-search
+            | 代码搜索
+          
+          .search-form
+            .form-group
+              label.form-label 项目路径
+              input#project.form-input(type="text" placeholder="输入项目路径" value=projectPath)
+            
+            .form-row
+              .form-group
+                label.form-label 搜索关键词
+                input#word.form-input(type="text" placeholder="输入要搜索的代码...")
+              
+              .form-group
+                label.form-label 文件匹配
+                input#files.form-input(type="text" placeholder="*.js, *.vue, *.py")
+              
+              .form-group(style="max-width: 120px;")
+                label.form-label 上下文
+                input#number.form-input(type="number" placeholder="2" min="0" max="10")
+            
+            .form-row(style="margin-top: 12px;")
+              .form-group
+                label.form-checkbox
+                  input#ignoreCase(type="checkbox" checked)
+                  span 忽略大小写
+            
+            button#start-query.btn-search
+              i.fas.fa-search
+              | 搜索代码
+        
+        // Results Card  
+        .card.results-card
+          #code-content
+            .results-empty
+              i.fas.fa-code
+              p 输入关键词开始搜索代码...
+
+    // Modal for viewing full source
+    #modal-overlay.modal-overlay
+      .modal
+        .modal-header
+          .modal-title#modal-title filename.js
+          button#modal-close.modal-close ×
+        .modal-body
+          pre#modal-code
+            code language-javascript
+
+    // Footer
+    .footer
+      p grep-Commander &copy; 2024 | 基于 Web 的本地代码搜索工具
+
+    // Scripts
+    script(src="/js/jquery.min.js")
+    script(src="/js/bootstrap.min.js")
+    script(src="/js/highlight.min.js")
+    script(src="/js/app.js")

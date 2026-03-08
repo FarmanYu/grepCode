@@ -1,0 +1,696 @@
+[2026-03-08T17:05:23.396] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    console.log(\"test\");"]}]
+[2026-03-08T17:05:23.398] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    const a = 1;","    const b = 2;"]}]
+[2026-03-08T17:05:23.399] [INFO] default - Parsed result: [{"filename":"path.js","number":[10],"suffix":"js","code":["    var x = 1;"]}]
+[2026-03-08T17:05:23.400] [INFO] default - Parsed result: [{"filename":"path/page.html","number":[5],"suffix":"html","code":["    <div>test</div>"]}]
+[2026-03-08T17:05:23.401] [INFO] default - Parsed result: [{"filename":"path/style.css","number":[3],"suffix":"css","code":["    color: red;"]}]
+[2026-03-08T17:05:23.402] [INFO] default - Parsed result: [{"filename":"path/app.ts","number":[15],"suffix":"ts","code":["    const name: string = \"test\";"]}]
+[2026-03-08T17:05:23.402] [INFO] default - Parsed result: [{"filename":"path/Component.jsx","number":[8],"suffix":"jsx","code":["    return <div />;"]}]
+[2026-03-08T17:05:23.403] [INFO] default - Parsed result: [{"filename":"path/file.js","number":[10],"suffix":"js","code":["    line1","    line2","    line3"]},{"filename":"path/file2.js","number":[5],"suffix":"js","code":["    other line"]}]
+[2026-03-08T17:05:23.404] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    console.log(\"test\");"]}]
+[2026-03-08T17:05:23.404] [INFO] default - Parsed result: [{"filename":"","number":[],"suffix":"","code":["this is not a valid grep output"]}]
+[2026-03-08T17:05:23.405] [INFO] default - Parsed result: [{"filename":"path/file.js","number":[10],"suffix":"js","code":["    code","    more code"]}]
+[2026-03-08T17:05:23.428] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:05:23.442] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:05:23.453] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:05:23.456] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:05:23.459] [INFO] default - Executing command: grep -r -n 'xyzabc123nonexistent' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:05:23.478] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:05:23.480] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/tests/*
+[2026-03-08T17:05:23.491] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:05:23.493] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:05:23.504] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:05:23.505] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/tests/*
+[2026-03-08T17:05:23.524] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:05:23.525] [INFO] default - Executing command: grep -r -i -n 'DESCRIBE' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:05:23.539] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:05:23.540] [INFO] default - Executing command: grep -r -w -n 'describe' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:05:23.550] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:05:23.551] [INFO] default - Executing command: grep -r -n 'test' /Users/yuhongfei/work/grepCode/tests/*.nonexistent
+[2026-03-08T17:05:23.566] [INFO] default - Grep process exit with code: 2
+[2026-03-08T17:16:50.738] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    console.log(\"test\");"]}]
+[2026-03-08T17:16:50.740] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    const a = 1;","    const b = 2;"]}]
+[2026-03-08T17:16:50.741] [INFO] default - Parsed result: [{"filename":"path.js","number":[10],"suffix":"js","code":["    var x = 1;"]}]
+[2026-03-08T17:16:50.741] [INFO] default - Parsed result: [{"filename":"path/page.html","number":[5],"suffix":"html","code":["    <div>test</div>"]}]
+[2026-03-08T17:16:50.742] [INFO] default - Parsed result: [{"filename":"path/style.css","number":[3],"suffix":"css","code":["    color: red;"]}]
+[2026-03-08T17:16:50.742] [INFO] default - Parsed result: [{"filename":"path/app.ts","number":[15],"suffix":"ts","code":["    const name: string = \"test\";"]}]
+[2026-03-08T17:16:50.743] [INFO] default - Parsed result: [{"filename":"path/Component.jsx","number":[8],"suffix":"jsx","code":["    return <div />;"]}]
+[2026-03-08T17:16:50.743] [INFO] default - Parsed result: [{"filename":"path/file.js","number":[10],"suffix":"js","code":["    line1","    line2","    line3"]},{"filename":"path/file2.js","number":[5],"suffix":"js","code":["    other line"]}]
+[2026-03-08T17:16:50.744] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    console.log(\"test\");"]}]
+[2026-03-08T17:16:50.744] [INFO] default - Parsed result: [{"filename":"","number":[],"suffix":"","code":["this is not a valid grep output"]}]
+[2026-03-08T17:16:50.745] [INFO] default - Parsed result: [{"filename":"path/file.js","number":[10],"suffix":"js","code":["    code","    more code"]}]
+[2026-03-08T17:16:50.749] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:16:50.752] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:16:50.765] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:16:50.765] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:16:50.766] [INFO] default - Executing command: grep -r -n 'xyzabc123nonexistent' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:16:50.776] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:16:50.778] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/tests/*
+[2026-03-08T17:16:50.788] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:16:50.790] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:16:50.800] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:16:50.801] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/tests/*
+[2026-03-08T17:16:50.812] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:16:50.812] [INFO] default - Executing command: grep -r -i -n 'DESCRIBE' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:16:50.822] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:16:50.823] [INFO] default - Executing command: grep -r -w -n 'describe' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:16:50.834] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:16:50.835] [INFO] default - Executing command: grep -r -n 'test' /Users/yuhongfei/work/grepCode/tests/*.nonexistent
+[2026-03-08T17:16:50.846] [INFO] default - Grep process exit with code: 2
+[2026-03-08T17:19:12.464] [INFO] default - Search request: {}
+[2026-03-08T17:19:12.477] [INFO] default - Search request: {
+  word: 'describe',
+  files: '*.js',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:19:12.477] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:19:12.489] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:19:12.490] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:19:22.495] [INFO] default - Search request: { word: 'test', path: '/non/existent/path' }
+[2026-03-08T17:19:22.507] [INFO] default - Search request: { word: 'require', path: '/Users/yuhongfei/work/grepCode' }
+[2026-03-08T17:19:22.508] [INFO] default - Executing command: grep -r -n 'require' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:19:23.135] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:19:23.136] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:19:32.510] [INFO] default - Search request: {
+  word: 'describe',
+  files: '*.js',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:19:32.511] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:19:32.521] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:19:32.521] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:19:42.510] [INFO] default - Search request: {
+  word: 'describe',
+  number: '2',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:19:42.511] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:19:42.886] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:19:42.887] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:19:52.511] [INFO] default - Search request: {
+  word: 'describe',
+  files: '*.js',
+  number: '2',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:19:52.511] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:19:52.521] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:19:52.522] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:20:02.512] [INFO] default - Search request: { word: 'test; rm -rf /', path: '/Users/yuhongfei/work/grepCode' }
+[2026-03-08T17:20:02.512] [INFO] default - Executing command: grep -r -n 'test rm -rf /' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:20:02.905] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:20:02.905] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:20:12.513] [INFO] default - Search request: {
+  word: 'test | cat /etc/passwd',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:20:12.513] [INFO] default - Executing command: grep -r -n 'test  cat /etc/passwd' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:20:12.886] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:20:12.886] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:20:22.513] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    console.log(\"test\");"]}]
+[2026-03-08T17:20:22.514] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    const a = 1;","    const b = 2;"]}]
+[2026-03-08T17:20:22.515] [INFO] default - Parsed result: [{"filename":"path.js","number":[10],"suffix":"js","code":["    var x = 1;"]}]
+[2026-03-08T17:20:22.515] [INFO] default - Parsed result: [{"filename":"path/page.html","number":[5],"suffix":"html","code":["    <div>test</div>"]}]
+[2026-03-08T17:20:22.516] [INFO] default - Parsed result: [{"filename":"path/style.css","number":[3],"suffix":"css","code":["    color: red;"]}]
+[2026-03-08T17:20:22.516] [INFO] default - Parsed result: [{"filename":"path/app.ts","number":[15],"suffix":"ts","code":["    const name: string = \"test\";"]}]
+[2026-03-08T17:20:22.517] [INFO] default - Parsed result: [{"filename":"path/Component.jsx","number":[8],"suffix":"jsx","code":["    return <div />;"]}]
+[2026-03-08T17:20:22.517] [INFO] default - Parsed result: [{"filename":"path/file.js","number":[10],"suffix":"js","code":["    line1","    line2","    line3"]},{"filename":"path/file2.js","number":[5],"suffix":"js","code":["    other line"]}]
+[2026-03-08T17:20:22.518] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    console.log(\"test\");"]}]
+[2026-03-08T17:20:22.519] [INFO] default - Parsed result: [{"filename":"","number":[],"suffix":"","code":["this is not a valid grep output"]}]
+[2026-03-08T17:20:22.519] [INFO] default - Parsed result: [{"filename":"path/file.js","number":[10],"suffix":"js","code":["    code","    more code"]}]
+[2026-03-08T17:20:22.524] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:20:22.526] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:20:22.534] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:20:22.536] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:20:22.537] [INFO] default - Executing command: grep -r -n 'xyzabc123nonexistent' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:20:22.548] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:20:22.549] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/tests/*
+[2026-03-08T17:20:22.560] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:20:22.562] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:20:22.573] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:20:22.577] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/tests/*
+[2026-03-08T17:20:22.589] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:20:22.590] [INFO] default - Executing command: grep -r -i -n 'DESCRIBE' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:20:22.602] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:20:22.603] [INFO] default - Executing command: grep -r -w -n 'describe' /Users/yuhongfei/work/grepCode/tests/*.js
+[2026-03-08T17:20:22.613] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:20:22.613] [INFO] default - Executing command: grep -r -n 'test' /Users/yuhongfei/work/grepCode/tests/*.nonexistent
+[2026-03-08T17:20:22.623] [INFO] default - Grep process exit with code: 2
+[2026-03-08T17:23:26.374] [INFO] default - Search request: {}
+[2026-03-08T17:23:26.387] [INFO] default - Search request: {
+  word: 'describe',
+  files: '*.js',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:23:26.388] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:23:26.402] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:23:26.403] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:25:33.998] [INFO] default - Search request: {}
+[2026-03-08T17:25:34.004] [INFO] default - Search request: {
+  word: 'describe',
+  files: '*.js',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:25:34.005] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:25:34.017] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:25:34.018] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:25:49.028] [INFO] default - Search request: { word: 'test', path: '/non/existent/path' }
+[2026-03-08T17:25:49.042] [INFO] default - Search request: { word: 'require', path: '/Users/yuhongfei/work/grepCode' }
+[2026-03-08T17:25:49.043] [INFO] default - Executing command: grep -r -n 'require' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:25:49.676] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:25:49.676] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:26:04.049] [INFO] default - Search request: {
+  word: 'describe',
+  files: '*.js',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:26:04.049] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:26:04.063] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:26:04.064] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:26:19.049] [INFO] default - Search request: {
+  word: 'describe',
+  number: '2',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:26:19.049] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:26:19.421] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:26:19.422] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:26:34.050] [INFO] default - Search request: {
+  word: 'describe',
+  files: '*.js',
+  number: '2',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:26:34.050] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:26:34.070] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:26:34.070] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:26:49.052] [INFO] default - Search request: { word: 'test; rm -rf /', path: '/Users/yuhongfei/work/grepCode' }
+[2026-03-08T17:26:49.052] [INFO] default - Executing command: grep -r -n 'test rm -rf /' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:26:49.546] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:26:49.547] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:27:04.052] [INFO] default - Search request: {
+  word: 'test | cat /etc/passwd',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:27:04.052] [INFO] default - Executing command: grep -r -n 'test  cat /etc/passwd' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:27:04.578] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:27:04.578] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:27:19.055] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    console.log(\"test\");"]}]
+[2026-03-08T17:27:19.058] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    const a = 1;","    const b = 2;"]}]
+[2026-03-08T17:27:19.059] [INFO] default - Parsed result: [{"filename":"path.js","number":[10],"suffix":"js","code":["    var x = 1;"]}]
+[2026-03-08T17:27:19.060] [INFO] default - Parsed result: [{"filename":"path/page.html","number":[5],"suffix":"html","code":["    <div>test</div>"]}]
+[2026-03-08T17:27:19.061] [INFO] default - Parsed result: [{"filename":"path/style.css","number":[3],"suffix":"css","code":["    color: red;"]}]
+[2026-03-08T17:27:19.061] [INFO] default - Parsed result: [{"filename":"path/app.ts","number":[15],"suffix":"ts","code":["    const name: string = \"test\";"]}]
+[2026-03-08T17:27:19.062] [INFO] default - Parsed result: [{"filename":"path/Component.jsx","number":[8],"suffix":"jsx","code":["    return <div />;"]}]
+[2026-03-08T17:27:19.063] [INFO] default - Parsed result: [{"filename":"path/file.js","number":[10],"suffix":"js","code":["    line1","    line2","    line3"]},{"filename":"path/file2.js","number":[5],"suffix":"js","code":["    other line"]}]
+[2026-03-08T17:27:19.064] [INFO] default - Parsed result: [{"filename":"path/to/file.js","number":[20],"suffix":"js","code":["    console.log(\"test\");"]}]
+[2026-03-08T17:27:19.064] [INFO] default - Parsed result: [{"filename":"","number":[],"suffix":"","code":["this is not a valid grep output"]}]
+[2026-03-08T17:27:19.065] [INFO] default - Parsed result: [{"filename":"path/file.js","number":[10],"suffix":"js","code":["    code","    more code"]}]
+[2026-03-08T17:27:19.070] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:27:19.071] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:27:19.084] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:27:19.084] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:27:19.086] [INFO] default - Executing command: grep -r -n 'xyzabc123nonexistent_1772962039086' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:27:19.097] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:27:19.098] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:27:19.640] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:27:19.643] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:27:19.653] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:27:19.653] [INFO] default - Executing command: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:27:20.011] [INFO] default - Grep process exit with code: 0
+[2026-03-08T17:27:20.012] [INFO] default - Executing command: grep -r -i -n 'DESCRIBE' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:27:20.021] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:27:20.022] [INFO] default - Executing command: grep -r -w -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:27:20.031] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:27:20.032] [INFO] default - Executing command: grep -r -n 'test' /Users/yuhongfei/work/grepCode/*.nonexistent
+[2026-03-08T17:27:20.041] [INFO] default - Grep process exit with code: 2
+[2026-03-08T17:28:57.078] [INFO] default - Search request: {}
+[2026-03-08T17:28:57.086] [INFO] default - Search request: {
+  word: 'describe',
+  files: '*.js',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:28:57.087] [INFO] default - Executing command: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:28:57.107] [INFO] default - Grep process exit with code: 1
+[2026-03-08T17:28:57.108] [ERROR] default - Search error: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:119:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:33:51.940] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:33:51.944] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:33:51.956] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:33:52.724] [INFO] default - 执行命令: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:34:12.247] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:34:12.252] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:34:12.266] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:34:12.933] [INFO] default - 执行命令: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:34:35.206] [INFO] default - GET /
+[2026-03-08T17:34:36.226] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T17:34:36.229] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T17:34:36.457] [INFO] default - GET /js/app.js
+[2026-03-08T17:34:36.481] [INFO] default - GET /css/default.min.css
+[2026-03-08T17:34:36.500] [INFO] default - GET /js/jquery.js
+[2026-03-08T17:34:36.556] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T17:34:36.598] [INFO] default - GET /health
+[2026-03-08T17:34:38.100] [INFO] default - GET /favicon.ico
+[2026-03-08T17:43:46.304] [INFO] default - GET /cmdparse?t=1772963026284&word=grep&files=*&number=&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T17:43:46.309] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*',
+  number: '',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:43:46.310] [INFO] default - 执行命令: grep -r -n 'grep' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:43:47.113] [ERROR] error - 搜索错误: TypeError: this.parseCommendText is not a function
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:152:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:44:14.945] [INFO] default - GET /
+[2026-03-08T17:44:15.236] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T17:44:15.238] [INFO] default - GET /js/jquery.js
+[2026-03-08T17:44:15.242] [INFO] default - GET /css/default.min.css
+[2026-03-08T17:44:15.245] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T17:44:15.246] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T17:44:15.249] [INFO] default - GET /js/app.js
+[2026-03-08T17:44:17.695] [INFO] default - GET /cmdparse?word=describe&files=*.js&path=/Users/yuhongfei/work/grepCode
+[2026-03-08T17:44:17.696] [INFO] default - 搜索请求: {
+  word: 'describe',
+  files: '*.js',
+  number: undefined,
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:44:17.697] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:44:17.711] [ERROR] error - 搜索错误: TypeError: Cannot read properties of null (reading 'json')
+    at Object.send (/Users/yuhongfei/work/grepCode/routes/cmd.js:25:15)
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:153:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:44:42.413] [INFO] default - GET /
+[2026-03-08T17:44:42.710] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T17:44:42.712] [INFO] default - GET /css/default.min.css
+[2026-03-08T17:44:42.716] [INFO] default - GET /js/jquery.js
+[2026-03-08T17:44:42.718] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T17:44:42.719] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T17:44:42.722] [INFO] default - GET /js/app.js
+[2026-03-08T17:44:49.552] [INFO] default - GET /cmdparse?t=1772963089548&word=11&files=*.js&number=2&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T17:44:49.553] [INFO] default - 搜索请求: {
+  word: '11',
+  files: '*.js',
+  number: '2',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:44:49.554] [INFO] default - 执行命令: grep -r -n '11' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:44:49.570] [ERROR] error - 搜索错误: TypeError: Cannot read properties of null (reading 'json')
+    at Object.send (/Users/yuhongfei/work/grepCode/routes/cmd.js:25:15)
+    at /Users/yuhongfei/work/grepCode/routes/cmd.js:153:27
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-03-08T17:45:25.458] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:45:25.462] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:45:25.474] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:45:26.200] [INFO] default - 执行命令: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:45:32.832] [INFO] default - GET /
+[2026-03-08T17:45:33.054] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T17:45:33.056] [INFO] default - GET /css/default.min.css
+[2026-03-08T17:45:33.062] [INFO] default - GET /js/jquery.js
+[2026-03-08T17:45:33.063] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T17:45:33.064] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T17:45:33.067] [INFO] default - GET /js/app.js
+[2026-03-08T17:45:35.553] [INFO] default - GET /health
+[2026-03-08T17:45:35.654] [INFO] default - GET /cmdparse?word=describe&files=*.js&path=/Users/yuhongfei/work/grepCode
+[2026-03-08T17:45:35.655] [INFO] default - 搜索请求: {
+  word: 'describe',
+  files: '*.js',
+  number: undefined,
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:45:35.656] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:45:39.815] [INFO] default - GET /cmdparse?t=1772963139811&word=33&files=*.js&number=2&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T17:45:39.815] [INFO] default - 搜索请求: {
+  word: '33',
+  files: '*.js',
+  number: '2',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:45:39.816] [INFO] default - 执行命令: grep -r -n '33' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:45:44.045] [INFO] default - GET /cmdparse?t=1772963144043&word=grep&files=*.js&number=2&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T17:45:44.045] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*.js',
+  number: '2',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:45:44.045] [INFO] default - 执行命令: grep -r -n 'grep' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:45:54.842] [INFO] default - GET /
+[2026-03-08T17:45:54.916] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T17:45:54.918] [INFO] default - GET /css/default.min.css
+[2026-03-08T17:45:54.919] [INFO] default - GET /js/jquery.js
+[2026-03-08T17:45:54.923] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T17:45:54.924] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T17:45:54.925] [INFO] default - GET /js/app.js
+[2026-03-08T17:46:02.105] [INFO] default - GET /cmdparse?t=1772963162103&word=grep&files=*.js&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T17:46:02.106] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*.js',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:46:02.106] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:46:45.146] [INFO] default - GET /
+[2026-03-08T17:46:45.193] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T17:46:45.194] [INFO] default - GET /css/default.min.css
+[2026-03-08T17:46:45.200] [INFO] default - GET /js/jquery.js
+[2026-03-08T17:46:45.201] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T17:46:45.202] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T17:46:45.203] [INFO] default - GET /js/app.js
+[2026-03-08T17:46:53.938] [INFO] default - GET /cmdparse?t=1772963213935&word=grep&files=*&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T17:46:53.938] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:46:53.938] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:54:51.224] [INFO] default - GET /
+[2026-03-08T17:54:51.521] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T17:54:51.522] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T17:54:51.527] [INFO] default - GET /css/default.min.css
+[2026-03-08T17:54:51.528] [INFO] default - GET /js/app.js
+[2026-03-08T17:54:51.532] [INFO] default - GET /js/jquery.js
+[2026-03-08T17:54:51.536] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T17:54:53.822] [INFO] default - GET /health
+[2026-03-08T17:54:53.842] [INFO] default - GET /cmdparse?word=function&files=*.js&path=/Users/yuhongfei/work/grepCode
+[2026-03-08T17:54:53.843] [INFO] default - 搜索请求: {
+  word: 'function',
+  files: '*.js',
+  number: undefined,
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:54:53.844] [INFO] default - 执行命令: grep -r -n 'function' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:55:28.449] [INFO] default - GET /
+[2026-03-08T17:55:28.507] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T17:55:28.508] [INFO] default - GET /css/default.min.css
+[2026-03-08T17:55:28.510] [INFO] default - GET /js/jquery.js
+[2026-03-08T17:55:28.512] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T17:55:28.513] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T17:55:28.515] [INFO] default - GET /js/app.js
+[2026-03-08T17:55:36.643] [INFO] default - GET /cmdparse?t=1772963736640&word=grep&files=*.js&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T17:55:36.644] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*.js',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:55:36.644] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:58:01.804] [INFO] default - GET /
+[2026-03-08T17:58:02.110] [INFO] default - GET /js/jquery.js
+[2026-03-08T17:58:02.113] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T17:58:02.117] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T17:58:02.119] [INFO] default - GET /css/default.min.css
+[2026-03-08T17:58:02.122] [INFO] default - GET /js/app.js
+[2026-03-08T17:58:02.123] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T17:58:04.406] [INFO] default - GET /readfile?path=/Users/yuhongfei/work/grepCode/package.json
+[2026-03-08T17:58:14.268] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:58:14.272] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:58:14.283] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T17:58:15.023] [INFO] default - 执行命令: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:58:31.481] [INFO] default - GET /cmdparse?t=1772963911476&word=grep&files=*.js&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T17:58:31.483] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*.js',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:58:31.484] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T17:58:52.760] [INFO] default - GET /
+[2026-03-08T17:58:52.832] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T17:58:52.833] [INFO] default - GET /css/default.min.css
+[2026-03-08T17:58:52.836] [INFO] default - GET /js/jquery.js
+[2026-03-08T17:58:52.836] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T17:58:52.841] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T17:58:52.842] [INFO] default - GET /js/app.js
+[2026-03-08T17:59:05.142] [INFO] default - GET /cmdparse?t=1772963945139&word=grep&files=*.vue&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T17:59:05.144] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*.vue',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:59:05.145] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*.vue
+[2026-03-08T17:59:05.163] [ERROR] error - 搜索错误: Error: grep: /Users/yuhongfei/work/grepCode/*.vue: No such file or directory
+
+    at ChildProcess.<anonymous> (/Users/yuhongfei/work/grepCode/routes/grep.js:135:21)
+    at ChildProcess.emit (node:events:508:28)
+    at ChildProcess._handle.onexit (node:internal/child_process:294:12) {
+  code: 2,
+  signal: null
+}
+[2026-03-08T17:59:11.303] [INFO] default - GET /cmdparse?t=1772963951300&word=grep&files=*&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T17:59:11.303] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T17:59:11.304] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*
+[2026-03-08T18:03:53.443] [INFO] default - GET /
+[2026-03-08T18:03:53.753] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T18:03:53.755] [INFO] default - GET /css/default.min.css
+[2026-03-08T18:03:53.758] [INFO] default - GET /js/jquery.js
+[2026-03-08T18:03:53.759] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T18:03:53.761] [INFO] default - GET /js/app.js
+[2026-03-08T18:03:53.765] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T18:03:56.067] [INFO] default - GET /health
+[2026-03-08T18:03:56.086] [INFO] default - GET /cmdparse?word=function&files=*.js&path=/Users/yuhongfei/work/grepCode
+[2026-03-08T18:03:56.087] [INFO] default - 搜索请求: {
+  word: 'function',
+  files: '*.js',
+  number: undefined,
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:03:56.088] [INFO] default - 执行命令: grep -r -n 'function' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:04:05.162] [INFO] default - GET /cmdparse?t=1772964245157&word=grep&files=*.js&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T18:04:05.163] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*.js',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:04:05.164] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:04:23.627] [INFO] default - GET /
+[2026-03-08T18:04:23.723] [INFO] default - GET /css/bootstrap.min.css
+[2026-03-08T18:04:23.724] [INFO] default - GET /css/default.min.css
+[2026-03-08T18:04:23.726] [INFO] default - GET /js/jquery.js
+[2026-03-08T18:04:23.727] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T18:04:23.728] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T18:04:23.729] [INFO] default - GET /js/app.js
+[2026-03-08T18:13:20.194] [INFO] default - GET /
+[2026-03-08T18:13:20.566] [INFO] default - GET /js/jquery.js
+[2026-03-08T18:13:20.567] [INFO] default - GET /js/bootstrap.js
+[2026-03-08T18:13:20.569] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T18:13:20.573] [INFO] default - GET /js/app.js
+[2026-03-08T18:13:22.800] [INFO] default - GET /health
+[2026-03-08T18:13:22.902] [INFO] default - GET /cmdparse?word=function&files=*.js&path=/Users/yuhongfei/work/grepCode
+[2026-03-08T18:13:22.902] [INFO] default - 搜索请求: {
+  word: 'function',
+  files: '*.js',
+  number: undefined,
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:13:22.903] [INFO] default - 执行命令: grep -r -n 'function' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:13:22.951] [INFO] default - GET /readfile?path=/Users/yuhongfei/work/grepCode/package.json&searchPath=/Users/yuhongfei/work/grepCode
+[2026-03-08T18:13:22.953] [INFO] default - 读取文件: {
+  filePath: '/Users/yuhongfei/work/grepCode/package.json',
+  resolvedPath: '/Users/yuhongfei/work/grepCode/package.json',
+  projectRoot: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:13:36.783] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:13:36.788] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:13:36.799] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T18:13:37.530] [INFO] default - 执行命令: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:16:14.062] [INFO] default - GET /cmdparse?t=1772964974059&word=grep&files=*.js&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T18:16:14.064] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*.js',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:16:14.065] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:16:40.076] [INFO] default - GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-03-08T18:18:14.505] [INFO] default - GET /
+[2026-03-08T18:18:14.879] [INFO] default - GET /js/jquery.min.js
+[2026-03-08T18:18:14.881] [INFO] default - GET /js/bootstrap.min.js
+[2026-03-08T18:18:14.886] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T18:18:14.893] [INFO] default - GET /js/app.js
+[2026-03-08T18:18:17.108] [INFO] default - GET /
+[2026-03-08T18:18:33.190] [INFO] default - GET /
+[2026-03-08T18:18:33.283] [INFO] default - GET /cmdparse?word=function&files=*.js&path=/Users/yuhongfei/work/grepCode
+[2026-03-08T18:18:33.284] [INFO] default - 搜索请求: {
+  word: 'function',
+  files: '*.js',
+  number: undefined,
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:18:33.284] [INFO] default - 执行命令: grep -r -n 'function' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:21:53.696] [INFO] default - GET /cmdparse?t=1772965313690&word=grep&files=*&number=&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T18:21:53.698] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*',
+  number: '',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:21:53.698] [INFO] default - 执行命令: grep -r -n 'grep' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T18:21:58.496] [INFO] default - GET /.well-known/appspecific/com.chrome.devtools.json
+[2026-03-08T18:21:58.965] [INFO] default - GET /js/bootstrap.bundle.min.js.map
+[2026-03-08T18:24:35.334] [INFO] default - GET /
+[2026-03-08T18:24:35.672] [INFO] default - GET /js/bootstrap.min.js
+[2026-03-08T18:24:35.674] [INFO] default - GET /js/app.js
+[2026-03-08T18:24:35.686] [INFO] default - GET /js/jquery.min.js
+[2026-03-08T18:24:35.688] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T18:24:38.063] [INFO] default - GET /cmdparse?word=function&files=*.js&path=/Users/yuhongfei/work/grepCode
+[2026-03-08T18:24:38.063] [INFO] default - 搜索请求: {
+  word: 'function',
+  files: '*.js',
+  number: undefined,
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:24:38.064] [INFO] default - 执行命令: grep -r -n 'function' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:24:51.978] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:24:51.982] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:24:51.993] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T18:24:52.721] [INFO] default - 执行命令: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:25:07.832] [INFO] default - GET /cmdparse?t=1772965507827&word=grep&files=*&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T18:25:07.833] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:25:07.833] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*
+[2026-03-08T18:25:16.300] [INFO] default - GET /cmdparse?t=1772965516296&word=grep&files=*&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T18:25:16.301] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:25:16.302] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*
+[2026-03-08T18:27:26.287] [INFO] default - GET /
+[2026-03-08T18:27:26.656] [INFO] default - GET /js/jquery.min.js
+[2026-03-08T18:27:26.657] [INFO] default - GET /js/bootstrap.min.js
+[2026-03-08T18:27:26.660] [INFO] default - GET /js/app.js
+[2026-03-08T18:27:26.667] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T18:27:28.873] [INFO] default - GET /cmdparse?word=function&files=*.js&path=/Users/yuhongfei/work/grepCode
+[2026-03-08T18:27:28.874] [INFO] default - 搜索请求: {
+  word: 'function',
+  files: '*.js',
+  number: undefined,
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:27:28.874] [INFO] default - 执行命令: grep -r -n 'function' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:27:45.649] [INFO] default - GET /
+[2026-03-08T18:27:45.803] [INFO] default - GET /health
+[2026-03-08T18:28:04.239] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:28:04.244] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:28:04.258] [INFO] default - 执行命令: grep -r -n 'describe' /Users/yuhongfei/work/grepCode/*
+[2026-03-08T18:28:04.933] [INFO] default - 执行命令: grep -r -n 'describe' -C 2 /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:28:59.146] [INFO] default - GET /
+[2026-03-08T18:28:59.258] [INFO] default - GET /js/jquery.min.js
+[2026-03-08T18:28:59.265] [INFO] default - GET /js/bootstrap.min.js
+[2026-03-08T18:28:59.267] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T18:28:59.269] [INFO] default - GET /js/app.js
+[2026-03-08T18:29:06.952] [INFO] default - GET /cmdparse?t=1772965746949&word=grep&files=*&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T18:29:06.952] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:29:06.953] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*
+[2026-03-08T18:45:06.810] [INFO] default - GET /
+[2026-03-08T18:45:07.035] [INFO] default - GET /js/jquery.min.js
+[2026-03-08T18:45:07.036] [INFO] default - GET /js/bootstrap.min.js
+[2026-03-08T18:45:07.037] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T18:45:07.038] [INFO] default - GET /js/app.js
+[2026-03-08T18:45:14.844] [INFO] default - GET /cmdparse?t=1772966714841&word=grep&files=*&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode
+[2026-03-08T18:45:14.845] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:45:14.845] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*
+[2026-03-08T18:49:01.977] [INFO] default - GET /
+[2026-03-08T18:49:02.121] [INFO] default - GET /js/jquery.min.js
+[2026-03-08T18:49:02.121] [INFO] default - GET /js/bootstrap.min.js
+[2026-03-08T18:49:02.123] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T18:49:02.128] [INFO] default - GET /js/app.js
+[2026-03-08T18:49:11.379] [INFO] default - GET /cmdparse?t=1772966951377&word=grep&files=*&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode&ignoreCase=false
+[2026-03-08T18:49:11.380] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:49:11.380] [INFO] default - 执行命令: grep -r -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*
+[2026-03-08T18:51:08.533] [INFO] default - GET /
+[2026-03-08T18:51:08.896] [INFO] default - GET /js/bootstrap.min.js
+[2026-03-08T18:51:08.897] [INFO] default - GET /js/jquery.min.js
+[2026-03-08T18:51:08.898] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T18:51:08.898] [INFO] default - GET /js/app.js
+[2026-03-08T18:51:11.046] [INFO] default - GET /cmdparse?word=function&files=*.js&path=/Users/yuhongfei/work/grepCode&ignoreCase=true
+[2026-03-08T18:51:11.047] [INFO] default - 搜索请求: {
+  word: 'function',
+  files: '*.js',
+  number: undefined,
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:51:11.047] [INFO] default - 执行命令: grep -r -i -n 'function' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:51:11.082] [INFO] default - GET /cmdparse?word=function&files=*.js&path=/Users/yuhongfei/work/grepCode
+[2026-03-08T18:51:11.082] [INFO] default - 搜索请求: {
+  word: 'function',
+  files: '*.js',
+  number: undefined,
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:51:11.083] [INFO] default - 执行命令: grep -r -n 'function' /Users/yuhongfei/work/grepCode/*.js
+[2026-03-08T18:53:35.895] [INFO] default - GET /
+[2026-03-08T18:53:36.349] [INFO] default - GET /js/jquery.min.js
+[2026-03-08T18:53:36.350] [INFO] default - GET /js/bootstrap.min.js
+[2026-03-08T18:53:36.353] [INFO] default - GET /js/highlight.min.js
+[2026-03-08T18:53:36.354] [INFO] default - GET /js/app.js
+[2026-03-08T18:53:36.946] [INFO] default - GET /favicon.ico
+[2026-03-08T18:53:37.263] [INFO] default - GET /health
+[2026-03-08T18:56:36.451] [INFO] default - GET /cmdparse?t=1772967396433&word=grep&files=*&number=10&path=%2FUsers%2Fyuhongfei%2Fwork%2FgrepCode&ignoreCase=true
+[2026-03-08T18:56:36.456] [INFO] default - 搜索请求: {
+  word: 'grep',
+  files: '*',
+  number: '10',
+  path: '/Users/yuhongfei/work/grepCode'
+}
+[2026-03-08T18:56:36.458] [INFO] default - 执行命令: grep -r -i -n 'grep' -C 10 /Users/yuhongfei/work/grepCode/*

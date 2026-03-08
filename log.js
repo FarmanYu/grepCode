@@ -1,30 +1,46 @@
-var log4js = require('log4js');
+/**
+ * 日志模块 - 使用 log4js
+ */
+
+const log4js = require('log4js');
+const path = require('path');
+const fs = require('fs');
+
+// 确保日志目录存在
+const logDir = path.join(__dirname, 'logs');
+if (!fs.existsSync(logDir)) {
+  fs.mkdirSync(logDir, { recursive: true });
+}
+
+// 配置 log4js
 log4js.configure({
-    appenders: [
-        {
-            type: 'console',
-            category: "console"
-        },
-        {
-            type: "dateFile",
-            filename: 'logs/log.log',
-            pattern: "_yyyy-MM-dd",
-            alwaysIncludePattern: false,
-            category: 'dateFileLog'
-        }
-    ],
-    replaceConsole: true,   //替换console.log
-    levels:{
-        dateFileLog: 'INFO'
+  appenders: {
+    console: { type: 'console' },
+    dateFile: {
+      type: 'dateFile',
+      filename: path.join(logDir, 'log.log'),
+      pattern: '_yyyy-MM-dd',
+      alwaysIncludePattern: false,
+      maxLogSize: 10 * 1024 * 1024, // 10MB
+      backups: 5
     }
+  },
+  categories: {
+    default: { appenders: ['console', 'dateFile'], level: 'info' },
+    error: { appenders: ['console', 'dateFile'], level: 'error' }
+  },
+  replaceConsole: true
 });
 
-var dateFileLog = log4js.getLogger('dateFileLog');
+const logger = log4js.getLogger('default');
+const errorLogger = log4js.getLogger('error');
 
-exports.logger = dateFileLog;
-
-exports.use = function(app) {
-    //页面请求日志,用auto的话,默认级别是WARN
-    //app.use(log4js.connectLogger(dateFileLog, {level:'auto', format:':method :url'}));
-    app.use(log4js.connectLogger(dateFileLog, {level:'debug', format:':method :url'}));
-}
+// 导出不同级别的日志函数
+module.exports = {
+  info: (...args) => logger.info(...args),
+  debug: (...args) => logger.debug(...args),
+  warn: (...args) => logger.warn(...args),
+  error: (...args) => errorLogger.error(...args),
+  getLogger: () => logger,
+  getErrorLogger: () => errorLogger
+};
